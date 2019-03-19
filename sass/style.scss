@@ -1,0 +1,450 @@
+$main-color: rgb(246, 134, 76);
+$second-color: rgb(130, 146, 190);
+$third-color: rgb(20, 38, 81);
+$forth-color: rgb(255, 255, 255);
+
+* {
+	box-sizing: border-box;
+}
+
+h1 {
+	font-size: 4rem;
+	@media only screen and (max-width: 1600px) {
+		font-size: 3rem;
+	}
+	@media only screen and (max-width: 991px) {
+		font-size: 2.5rem;
+	}
+}
+
+h2 {
+	font-size: 3rem;
+	@media only screen and (max-width: 1600px) {
+		font-size: 2.5rem;
+	}
+	@media only screen and (max-width: 991px) {
+		font-size: 2.0rem;
+	}
+}
+
+h3 {
+	font-size: 2.5rem;
+	@media only screen and (max-width: 1600px) {
+		font-size: 2rem;
+	}
+	@media only screen and (max-width: 991px) {
+		font-size: 1.5rem;
+	}
+}
+
+p {
+	font-size: 1.5rem;
+	color: $third-color;
+	@media only screen and (max-width: 1600px) {
+		font-size: 1rem;
+	}
+}
+
+
+.row {
+ 	margin-right: 0;
+}
+
+
+
+
+.hamburger.is-active .hamburger-inner, .hamburger-inner {
+	background-color: $main-color;
+	&:before {
+		background-color: $main-color;
+	}
+	&:after {
+		background-color: $main-color;
+	}
+}
+
+header {
+	nav {	
+		color: $second-color;
+		background-image: url(../images/bg.png);
+		background-repeat: no-repeat;
+	  	background-position: center;
+	  	background-size: cover;
+	  	font-size: 1.5rem;
+	  	@media only screen and (max-width: 1600px) {
+			font-size: 1rem;
+		}
+		.navbar-brand {
+			transform: scale(1.2);
+			@media only screen and (max-width: 1600px) {
+				transform: scale(1);				
+			}
+		}
+	  	.navbar-toggler {
+	  		&:focus {
+	  			outline: none;
+	  		}		
+	  	}
+		.navbar-collapse {
+			justify-content: flex-end;
+			.nav-item {
+				padding: 0 1rem;			 
+			}
+			a {
+				text-decoration: none;
+				color: inherit;
+				transition: 0.5s;
+				&:hover {
+					color: $main-color;
+				}
+				@media only screen and (max-width: 767px) {
+					&:hover {
+						padding-left: 20px;
+					}
+				}
+			}
+		}	
+		button {
+			background: transparent;
+			border: none;
+			color: inherit;
+			cursor: pointer;
+			transition: 0.5s;
+			padding: 0.5rem 0.5rem 0.5rem 0;
+			&:hover {
+				color: $main-color;
+			}
+		}
+	}
+	height: 100vh;
+	background-image: url(../images/bg.png);
+	background-repeat: no-repeat;
+  	background-position: center;
+  	background-size: cover;
+  	background-attachment: fixed;
+	.header-text {
+		padding-top: 40vh;
+		text-align: center;
+		@media only screen and (max-width: 767px) {
+			padding-top: 20vh;
+		}
+		h1:nth-of-type(1){
+			color: $third-color;
+		}
+		h1:nth-of-type(2){
+			color: $main-color;
+			font-weight: 700;
+		}
+		h2 {
+			padding-top: 10%;
+			color: $main-color;
+			font-weight: 700;
+		}
+		.text {
+			color: $second-color;		
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			.typed-cursor {
+				font-size: 2rem;
+				margin-bottom: 20px;
+				@media only screen and (max-width: 1600px) {
+					font-size: 1.5rem;
+				}
+			}
+			p {
+				color: inherit;
+				font-size: 2rem;
+				@media only screen and (max-width: 1600px) {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+}
+
+
+.about {
+	padding: 100px 0 0; 
+	.col-lg-7 {
+		z-index: 2;
+		text-align: center;
+		h3 {
+			color: $second-color;
+			line-height: 1.5;
+		}
+		p {
+			margin: 50px 0 100px;
+		}
+	}
+	.image {
+		position: relative;
+		padding: 0;
+		img {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			transform: scale(1.4);
+			transform-origin:bottom right;
+			opacity: 0;
+			@media only screen and (max-width: 1600px) {
+				transform: scale(1);				
+			}
+			@media only screen and (max-width: 1399px) {
+				transform: scale(0.75);				
+			} 
+		}
+	}
+}
+
+
+.stats {
+	color: $main-color;
+	background-color: $second-color;
+	padding: 50px 0;
+	text-align: center;
+	h1 {
+		font-weight: 700;
+		span {
+			font-size: 1.8rem;
+		}
+	}
+}
+
+
+.offer {
+	padding: 100px 0;
+	background-image: url(../images/bg.png);
+	background-repeat: no-repeat;
+  	background-position: center;
+  	background-size: cover;
+  	background-attachment: fixed;
+	.col-sm-12 {
+		padding-bottom: 100px;
+		text-align: center;
+		h1 {
+			color: $third-color;
+		}
+		h2 {
+			color: $second-color;
+			margin: 50px 0;
+			padding: 0 20px;
+			font-weight: 400;
+		}
+	}
+	.col-lg-6 {
+		margin-bottom: 50px;
+		opacity: 0;
+		@media only screen and (max-width: 577px) {
+			text-align: center;
+		}
+		h3 {
+			color: $main-color;
+		}
+		.circle {
+			border: 5px solid $main-color;
+			border-radius: 50%;
+			width: 150px;			
+			height: 150px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: 0.5s ease-in-out;
+			&:hover{
+				transform: scale(1.1);
+			}
+			&:hover img {
+				transform: rotate(360deg);
+			}
+			img {
+				transition: 0.5s ease-in-out;
+			}
+		}
+		.col-sm-4 {
+			@media only screen and (max-width: 577px) {
+				display: flex;
+				justify-content: center;
+			}
+		}
+	}
+}
+
+
+.quote {
+	background-image: url(../images/blue_bg.png);
+	background-repeat: no-repeat;
+  	background-position: center;
+  	background-size: cover;
+  	background-attachment: fixed;
+  	padding: 100px 0;
+  	color: $forth-color;
+  	p {
+  		color: inherit;
+  	}
+  	.quotation {
+  		display: flex;
+  		justify-content: flex-end;
+  	}
+  	.signature {
+  		display: flex;
+  		justify-content: space-between;
+  		padding-right: 15px;
+  	}
+}
+
+
+.contact {
+	background-color: $main-color;
+	padding: 100px 0;
+	button {
+		margin-top: 20px;
+		color: $forth-color;
+		box-shadow: none;
+		border: none;
+		height: 70px;
+		width: 210px;
+		border-radius: 10px;
+		cursor: pointer;
+		margin: 0; 
+		transition: 0.3s ease-in-out;
+		background: linear-gradient(45deg, $third-color 50%, transparent 50%);
+		background-position: 100% 0;
+		background-size: 500%;
+		background-color: $second-color;
+		font-size: 1.5rem;
+		@media only screen and (max-width: 1600px) {
+		font-size: 1rem;
+		height: 50px;
+		width: 150px;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:hover {
+			background-position: 0 100%;
+		}
+	}
+	h4 {
+		border-bottom: 2px solid $forth-color;
+		color: $forth-color;
+		margin-bottom: 30px;
+		font-weight: 700;
+		display: inline-block;
+		font-size: 1.5rem;
+		@media only screen and (max-width: 1600px) {
+			font-size: 1rem;
+		}
+	}
+	.formData {
+		line-height: 2;
+		p:nth-of-type(2) {
+			font-style: italic;
+			font-weight: 700;
+		}
+	}
+	.form-message {
+		text-align: center;
+		color: $forth-color;
+	}
+	.form {
+		.input-container {
+			display: flex;
+			justify-content: space-between;
+			padding-bottom: 30px;
+			@media only screen and (max-width: 1199px) {
+				flex-direction: column;
+				padding-bottom: 0px;
+			}
+			input {
+				box-shadow: none;
+				border: none;
+				width: 48%;
+				border-radius: 10px;
+				padding: 10px;
+				font-size: 1.5rem;
+				@media only screen and (max-width: 1600px) {
+					font-size: 1rem;
+				}
+				&:focus {
+					outline: none;
+				}
+				@media only screen and (max-width: 1199px) {
+					width: 100%;
+					margin-bottom: 30px;
+				}
+			}
+		}
+		textarea {
+			width: 100%;
+			border-radius: 10px;
+			margin-bottom: 30px;
+			padding: 10px;
+			min-height: 100px;
+			resize: none;
+			display: block;
+			border: none;
+			font-size: 1.5rem;
+			@media only screen and (max-width: 1600px) {
+				font-size: 1rem;
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}
+
+
+.form-hide {
+	display: none !important;
+}
+
+@keyframes formFadeIn {	
+	0% {
+		transform: scale(0.2);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.formFadeInAnimation {
+	animation: formFadeIn 0.5s forwards;
+}
+
+@keyframes formFadeOut {	
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(0.2);
+		opacity: 0;
+	}
+}
+
+.formFadeOutAnimation {
+	animation: formFadeOut 0.5s forwards;
+}
+
+footer {
+	.container {
+		p {
+			margin: 25px 0;
+			color: $third-color;
+		}
+	}
+	div:nth-of-type(2) {
+		padding: 25px 0;
+		text-align: center;
+		background-color: $third-color;
+		color: $forth-color;
+		p {
+			margin-bottom: 0;
+			color: inherit;
+		}
+	}
+}
