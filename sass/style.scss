@@ -1,3 +1,5 @@
+ @import url("https://use.typekit.net/omu8gkx.css");
+
 $main-color: rgb(246, 134, 76);
 $second-color: rgb(130, 146, 190);
 $third-color: rgb(20, 38, 81);
@@ -8,10 +10,7 @@ $forth-color: rgb(255, 255, 255);
 }
 
 h1 {
-	font-size: 4rem;
-	@media only screen and (max-width: 1600px) {
-		font-size: 3rem;
-	}
+	font-size: 3.3rem;
 	@media only screen and (max-width: 991px) {
 		font-size: 2.5rem;
 	}
@@ -19,40 +18,34 @@ h1 {
 
 h2 {
 	font-size: 3rem;
-	@media only screen and (max-width: 1600px) {
-		font-size: 2.5rem;
-	}
 	@media only screen and (max-width: 991px) {
 		font-size: 2.0rem;
 	}
 }
 
 h3 {
-	font-size: 2.5rem;
-	@media only screen and (max-width: 1600px) {
-		font-size: 2rem;
-	}
+	font-size: 2.3rem;
 	@media only screen and (max-width: 991px) {
 		font-size: 1.5rem;
 	}
 }
 
 p {
-	font-size: 1.5rem;
 	color: $third-color;
-	@media only screen and (max-width: 1600px) {
-		font-size: 1rem;
-	}
 }
 
 
 .row {
+	padding-right: 0px;
  	margin-right: 0;
 }
 
-
-
-
+@media (max-width: 576px) {
+  .container{ 
+    margin-left: 0;
+  }
+ }
+//hamburger color
 .hamburger.is-active .hamburger-inner, .hamburger-inner {
 	background-color: $main-color;
 	&:before {
@@ -63,23 +56,37 @@ p {
 	}
 }
 
+@keyframes image-animation {
+	0% {
+		padding-bottom: 40px;
+	}	
+	25% {
+		padding-bottom: 32px;
+	}
+	50% {
+		padding-bottom: 24px;
+	}
+	75% {
+		padding-bottom: 16px;
+	}
+	100% {
+		padding-bottom: 8px;
+	}
+}
+
+
+.navbar-background {
+	background: rgba(20, 38, 81, 0.8);	
+	transition: .5s;
+	animation: image-animation 0.7s ease-in;
+	&:hover {
+		background: rgba(20, 38, 81, 1);
+	}
+}
+
 header {
+	color: $second-color;
 	nav {	
-		color: $second-color;
-		background-image: url(../images/bg.png);
-		background-repeat: no-repeat;
-	  	background-position: center;
-	  	background-size: cover;
-	  	font-size: 1.5rem;
-	  	@media only screen and (max-width: 1600px) {
-			font-size: 1rem;
-		}
-		.navbar-brand {
-			transform: scale(1.2);
-			@media only screen and (max-width: 1600px) {
-				transform: scale(1);				
-			}
-		}
 	  	.navbar-toggler {
 	  		&:focus {
 	  			outline: none;
@@ -104,78 +111,83 @@ header {
 				}
 			}
 		}	
-		button {
-			background: transparent;
-			border: none;
-			color: inherit;
-			cursor: pointer;
-			transition: 0.5s;
-			padding: 0.5rem 0.5rem 0.5rem 0;
-			&:hover {
-				color: $main-color;
-			}
-		}
 	}
-	height: 100vh;
-	background-image: url(../images/bg.png);
+	height: 50vh;
+	background-image: url(../images/header_bg.png);
 	background-repeat: no-repeat;
   	background-position: center;
   	background-size: cover;
   	background-attachment: fixed;
+  	@media only screen and (max-width: 767px) {
+		height: 100vh;
+	}
 	.header-text {
-		padding-top: 40vh;
+		padding-top: 100px;
 		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
 		@media only screen and (max-width: 767px) {
 			padding-top: 20vh;
 		}
 		h1:nth-of-type(1){
-			color: $third-color;
+			color: $forth-color;
 		}
 		h1:nth-of-type(2){
 			color: $main-color;
 			font-weight: 700;
 		}
 		h2 {
-			padding-top: 10%;
+			padding-top: 50px;
 			color: $main-color;
 			font-weight: 700;
 		}
 		.text {
-			color: $second-color;		
+			color: $forth-color;		
 			display: flex;
 			flex-direction: row;
 			align-items: center;
 			justify-content: center;
 			.typed-cursor {
-				font-size: 2rem;
+				font-size: 1.5rem;
 				margin-bottom: 20px;
-				@media only screen and (max-width: 1600px) {
-					font-size: 1.5rem;
-				}
 			}
 			p {
 				color: inherit;
-				font-size: 2rem;
-				@media only screen and (max-width: 1600px) {
-					font-size: 1.5rem;
-				}
+				font-size: 1.5rem;
 			}
 		}
 	}
 }
 
 
-.about {
-	padding: 100px 0 0; 
-	.col-lg-7 {
+.about {	
+	padding: 50px 0;
+	height: 50vh;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	@media only screen and (max-width: 767px) {
+		height: auto;
+	}
+	.col-lg-10 {
 		z-index: 2;
 		text-align: center;
+		padding: 0;
 		h3 {
 			color: $second-color;
 			line-height: 1.5;
 		}
 		p {
-			margin: 50px 0 100px;
+			margin: 50px 0 0;
+			text-align: justify;
+			span {
+				display: table;
+				margin-left: auto;
+   				margin-right: auto;
+			}
 		}
 	}
 	.image {
@@ -184,15 +196,12 @@ header {
 		img {
 			position: absolute;
 			right: 0;
-			bottom: 0;
-			transform: scale(1.4);
+			bottom: -325px;
+			opacity: 1;
 			transform-origin:bottom right;
-			opacity: 0;
-			@media only screen and (max-width: 1600px) {
-				transform: scale(1);				
-			}
 			@media only screen and (max-width: 1399px) {
-				transform: scale(0.75);				
+				transform: scale(0.75);	
+				opacity: 0.6;			
 			} 
 		}
 	}
@@ -204,11 +213,33 @@ header {
 	background-color: $second-color;
 	padding: 50px 0;
 	text-align: center;
+	.col-md-4 {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
 	h1 {
-		font-weight: 700;
-		span {
-			font-size: 1.8rem;
+		.counter {
+			font-size: inherit;
 		}
+		font-size: 5.8rem;
+		font-weight: 700;
+		@media only screen and (max-width: 1399px) {
+			font-size: 4.5rem;				
+		} 
+		@media only screen and (max-width: 991px) {
+			font-size: 3.5rem;				
+		} 
+		span {
+			font-size: 1.5rem;
+		}
+	}
+	h3 {
+		font-size: 2.1rem;
+		@media only screen and (max-width: 1399px) {
+			font-size: 2rem;				
+		} 
 	}
 }
 
@@ -220,21 +251,30 @@ header {
   	background-position: center;
   	background-size: cover;
   	background-attachment: fixed;
+  	.container {
+  		div:nth-of-type(2), div:nth-of-type(3){
+  			padding-left: 20px;
+  		}
+  	}
+  	p {
+  		font-size: 15px;
+  	}
 	.col-sm-12 {
-		padding-bottom: 100px;
-		text-align: center;
+		padding-bottom: 35px;
 		h1 {
 			color: $third-color;
+			text-align: center;
 		}
-		h2 {
+		h3 {
 			color: $second-color;
 			margin: 50px 0;
 			padding: 0 20px;
 			font-weight: 400;
+			text-align: center;
 		}
 	}
 	.col-lg-6 {
-		margin-bottom: 50px;
+		margin: 45px 0;
 		opacity: 0;
 		@media only screen and (max-width: 577px) {
 			text-align: center;
@@ -251,15 +291,32 @@ header {
 			align-items: center;
 			justify-content: center;
 			transition: 0.5s ease-in-out;
-			&:hover{
-				transform: scale(1.1);
+			opacity: 0.7;
+			@media only screen and (min-width: 992px) and (max-width: 1199px) {
+				width: 130px;			
+				height: 130px;
 			}
+			&:hover{
+				transform: scale(1.05);
+				opacity: 1;
+			}	
 			&:hover img {
 				transform: rotate(360deg);
-			}
+				@media only screen and (min-width: 992px) and (max-width: 1199px) {
+					transform: scale(0.8) rotate(360deg);
+				}
+			}	
 			img {
 				transition: 0.5s ease-in-out;
-			}
+				@media only screen and (min-width: 992px) and (max-width: 1199px) {
+					transform: scale(0.8);
+				}
+			}				
+		}
+		.col-sm-4 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 		.col-sm-4 {
 			@media only screen and (max-width: 577px) {
@@ -270,6 +327,16 @@ header {
 	}
 }
 
+.owl-carousel .owl-item img {
+    display: block;
+    width: auto;
+}
+.owl-stage {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .quote {
 	background-image: url(../images/blue_bg.png);
@@ -277,19 +344,31 @@ header {
   	background-position: center;
   	background-size: cover;
   	background-attachment: fixed;
-  	padding: 100px 0;
   	color: $forth-color;
+  	padding: 50px 0; 
+  	img {
+  		height: 50px;
+  		width: 50px;
+  		margin: 25px 0;
+  	}
   	p {
   		color: inherit;
+  		padding: 0 20px;
+  		font-size: 1.2rem;
+  		text-align: center;
   	}
   	.quotation {
   		display: flex;
   		justify-content: flex-end;
+  		
   	}
   	.signature {
   		display: flex;
   		justify-content: space-between;
   		padding-right: 15px;
+  		p {
+  			text-align: right;
+  		}
   	}
 }
 
@@ -302,8 +381,8 @@ header {
 		color: $forth-color;
 		box-shadow: none;
 		border: none;
-		height: 70px;
-		width: 210px;
+		height: 50px;
+		width: 150px;
 		border-radius: 10px;
 		cursor: pointer;
 		margin: 0; 
@@ -312,12 +391,6 @@ header {
 		background-position: 100% 0;
 		background-size: 500%;
 		background-color: $second-color;
-		font-size: 1.5rem;
-		@media only screen and (max-width: 1600px) {
-		font-size: 1rem;
-		height: 50px;
-		width: 150px;
-		}
 		&:focus {
 			outline: none;
 		}
@@ -331,16 +404,17 @@ header {
 		margin-bottom: 30px;
 		font-weight: 700;
 		display: inline-block;
-		font-size: 1.5rem;
-		@media only screen and (max-width: 1600px) {
-			font-size: 1rem;
-		}
 	}
 	.formData {
 		line-height: 2;
+		padding-right: 100px;
+		p {
+			font-size: 14px;
+		}
 		p:nth-of-type(2) {
 			font-style: italic;
 			font-weight: 700;
+			float: right;
 		}
 	}
 	.form-message {
@@ -348,6 +422,7 @@ header {
 		color: $forth-color;
 	}
 	.form {
+		padding-left: 30px;
 		.input-container {
 			display: flex;
 			justify-content: space-between;
@@ -362,12 +437,11 @@ header {
 				width: 48%;
 				border-radius: 10px;
 				padding: 10px;
-				font-size: 1.5rem;
-				@media only screen and (max-width: 1600px) {
-					font-size: 1rem;
-				}
 				&:focus {
 					outline: none;
+				}
+				&:placeholder {
+					color: red;
 				}
 				@media only screen and (max-width: 1199px) {
 					width: 100%;
@@ -384,10 +458,6 @@ header {
 			resize: none;
 			display: block;
 			border: none;
-			font-size: 1.5rem;
-			@media only screen and (max-width: 1600px) {
-				font-size: 1rem;
-			}
 			&:focus {
 				outline: none;
 			}
