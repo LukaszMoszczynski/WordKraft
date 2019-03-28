@@ -134,7 +134,7 @@ header nav .navbar-collapse a:hover {
 }
 
 header .header-text {
-  padding-top: 100px;
+  padding-top: 15vh;
   text-align: center;
   display: -ms-flexbox;
   display: flex;
@@ -142,7 +142,6 @@ header .header-text {
       align-items: center;
   -ms-flex-pack: center;
       justify-content: center;
-  height: 100%;
 }
 
 @media only screen and (max-width: 767px) {
@@ -204,6 +203,13 @@ header .header-text .text p {
 @media only screen and (max-width: 767px) {
   .about {
     height: auto;
+    padding: 125px 0;
+  }
+}
+
+@media only screen and (max-width: 535px) {
+  .about {
+    padding: 59px 0;
   }
 }
 
@@ -242,10 +248,35 @@ header .header-text .text p {
   transform-origin: bottom right;
 }
 
+@media only screen and (max-width: 1970px) {
+  .about .image img {
+    transform: scale(0.95);
+  }
+}
+
+@media only screen and (max-width: 1900px) {
+  .about .image img {
+    opacity: 0.6;
+    transform: scale(0.85);
+    bottom: -324px;
+  }
+}
+
 @media only screen and (max-width: 1399px) {
   .about .image img {
     transform: scale(0.75);
-    opacity: 0.6;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .about .image img {
+    bottom: -305px;
+  }
+}
+
+@media only screen and (max-width: 535px) {
+  .about .image img {
+    bottom: -323px;
   }
 }
 
@@ -311,8 +342,20 @@ header .header-text .text p {
   background-attachment: fixed;
 }
 
+@media only screen and (max-width: 577px) {
+  .offer {
+    padding: 50px 0;
+  }
+}
+
 .offer .container div:nth-of-type(2), .offer .container div:nth-of-type(3) {
   padding-left: 20px;
+}
+
+@media only screen and (max-width: 577px) {
+  .offer .container div:nth-of-type(2), .offer .container div:nth-of-type(3) {
+    display: block;
+  }
 }
 
 .offer p {
@@ -321,6 +364,12 @@ header .header-text .text p {
 
 .offer .col-sm-12 {
   padding-bottom: 35px;
+}
+
+@media only screen and (max-width: 577px) {
+  .offer .col-sm-12 {
+    padding-bottom: 10px;
+  }
 }
 
 .offer .col-sm-12 h1 {
@@ -351,6 +400,12 @@ header .header-text .text p {
   color: #f6864c;
 }
 
+@media only screen and (max-width: 577px) {
+  .offer .col-lg-6 h3 {
+    padding: 20px 0;
+  }
+}
+
 .offer .col-lg-6 .circle {
   border: 5px solid #f6864c;
   border-radius: 50%;
@@ -367,6 +422,13 @@ header .header-text .text p {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .offer .col-lg-6 .circle {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 767px) {
   .offer .col-lg-6 .circle {
     width: 130px;
     height: 130px;
@@ -396,6 +458,10 @@ header .header-text .text p {
   .offer .col-lg-6 .circle img {
     transform: scale(0.8);
   }
+}
+
+.offer .col-lg-6 .circle .owl {
+  margin-left: 10px;
 }
 
 .offer .col-lg-6 .col-sm-4 {
@@ -478,7 +544,6 @@ header .header-text .text p {
 }
 
 .contact button {
-  margin-top: 20px;
   color: white;
   box-shadow: none;
   border: none;
@@ -534,6 +599,12 @@ header .header-text .text p {
   padding-left: 30px;
 }
 
+@media only screen and (max-width: 1199px) {
+  .contact .form {
+    padding-left: 7.5px;
+  }
+}
+
 .contact .form .input-container {
   display: -ms-flexbox;
   display: flex;
@@ -560,10 +631,7 @@ header .header-text .text p {
 
 .contact .form .input-container input:focus {
   outline: none;
-}
-
-.contact .form .input-container input:placeholder {
-  color: red;
+  color: #142651;
 }
 
 @media only screen and (max-width: 1199px) {
@@ -586,6 +654,15 @@ header .header-text .text p {
 
 .contact .form textarea:focus {
   outline: none;
+  color: #142651;
+}
+
+.contact .form textarea:-ms-input-placeholder, .contact .form input:-ms-input-placeholder {
+  color: #142651;
+}
+
+.contact .form textarea::placeholder, .contact .form input::placeholder {
+  color: #142651;
 }
 
 .form-hide {

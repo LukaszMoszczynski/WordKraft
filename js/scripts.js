@@ -24,7 +24,7 @@ $(document).ready(function(){
 	    margin:30,
 	    nav: false,
 	    autoplay:true,
-		autoplayTimeout:6000,
+		autoplayTimeout:15000,
 		autoplayHoverPause:true,
 		smartSpeed:650,
 		items:1
@@ -67,11 +67,11 @@ $(document).ready(function(){
 		$hamburger.toggleClass('is-active');
 	});
 
+//fade in animations
 
 	let countUpFinished = false;
 	
 	$(window).scroll(function() {
-
 
 		const headerTopOffset = $('.header-text').offset().top;
 		const statsTopOffset = $('.stats').offset().top;
@@ -99,8 +99,8 @@ $(document).ready(function(){
 
 		if(window.pageYOffset > offerTopOffset - $(window).height()) {
 			$('.offer-text h1').addClass('animated flipInY');
-			$('.offer-text h3').addClass('animated zoomInUp delay-1s');
-			$('.offer-text p').addClass('animated zoomInUp delay-2s');
+			$('.offer-text h3').addClass('animated fadeInDown delay-2s');
+			$('.offer-text p').addClass('animated zoomInUp delay-3s');
 		}
 
 		if(window.pageYOffset > offerIconsTopOffset - $(window).height() + 300) {	

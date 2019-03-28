@@ -122,12 +122,11 @@ header {
 		height: 100vh;
 	}
 	.header-text {
-		padding-top: 100px;
+		padding-top: 15vh;
 		text-align: center;
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		height: 100%;
+		justify-content: center;	
 		@media only screen and (max-width: 767px) {
 			padding-top: 20vh;
 		}
@@ -171,7 +170,11 @@ header {
 	justify-content: center;
 	@media only screen and (max-width: 767px) {
 		height: auto;
+		padding: 125px 0;
 	}
+		@media only screen and (max-width: 535px) {
+		padding: 59px 0;						
+	} 
 	.col-lg-10 {
 		z-index: 2;
 		text-align: center;
@@ -199,9 +202,22 @@ header {
 			bottom: -325px;
 			opacity: 1;
 			transform-origin:bottom right;
+			@media only screen and (max-width: 1970px) {
+				transform: scale(0.95);			
+			}
+			@media only screen and (max-width: 1900px) {
+				opacity: 0.6;	
+				transform: scale(0.85);		
+				bottom: -324px;
+			}
 			@media only screen and (max-width: 1399px) {
-				transform: scale(0.75);	
-				opacity: 0.6;			
+				transform: scale(0.75);						
+			} 
+			@media only screen and (max-width: 767px) {
+				bottom: -305px;						
+			} 
+			@media only screen and (max-width: 535px) {
+				bottom: -323px;						
 			} 
 		}
 	}
@@ -251,9 +267,15 @@ header {
   	background-position: center;
   	background-size: cover;
   	background-attachment: fixed;
+  	@media only screen and (max-width: 577px) {
+		padding: 50px 0;				
+	}
   	.container {
   		div:nth-of-type(2), div:nth-of-type(3){
   			padding-left: 20px;
+  			@media only screen and (max-width: 577px) {
+				display: block;			
+			}
   		}
   	}
   	p {
@@ -261,6 +283,9 @@ header {
   	}
 	.col-sm-12 {
 		padding-bottom: 35px;
+		@media only screen and (max-width: 577px) {
+			padding-bottom: 10px;			
+		}
 		h1 {
 			color: $third-color;
 			text-align: center;
@@ -281,6 +306,9 @@ header {
 		}
 		h3 {
 			color: $main-color;
+			@media only screen and (max-width: 577px) {
+				padding: 20px 0;
+			}
 		}
 		.circle {
 			border: 5px solid $main-color;
@@ -293,6 +321,10 @@ header {
 			transition: 0.5s ease-in-out;
 			opacity: 0.7;
 			@media only screen and (min-width: 992px) and (max-width: 1199px) {
+				width: 120px;			
+				height: 120px;
+			}
+			@media only screen and (min-width: 577px) and (max-width: 767px) {
 				width: 130px;			
 				height: 130px;
 			}
@@ -311,7 +343,10 @@ header {
 				@media only screen and (min-width: 992px) and (max-width: 1199px) {
 					transform: scale(0.8);
 				}
-			}				
+			}	
+			.owl {
+				margin-left: 10px;
+			}		
 		}
 		.col-sm-4 {
 			display: flex;
@@ -327,6 +362,10 @@ header {
 	}
 }
 
+
+
+
+// owl-carousel fix
 .owl-carousel .owl-item img {
     display: block;
     width: auto;
@@ -372,12 +411,10 @@ header {
   	}
 }
 
-
 .contact {
 	background-color: $main-color;
 	padding: 100px 0;
-	button {
-		margin-top: 20px;
+	button {	
 		color: $forth-color;
 		box-shadow: none;
 		border: none;
@@ -423,6 +460,9 @@ header {
 	}
 	.form {
 		padding-left: 30px;
+		@media only screen and (max-width: 1199px) {
+			padding-left: 7.5px;
+		}
 		.input-container {
 			display: flex;
 			justify-content: space-between;
@@ -439,9 +479,7 @@ header {
 				padding: 10px;
 				&:focus {
 					outline: none;
-				}
-				&:placeholder {
-					color: red;
+					color: $third-color;
 				}
 				@media only screen and (max-width: 1199px) {
 					width: 100%;
@@ -460,12 +498,16 @@ header {
 			border: none;
 			&:focus {
 				outline: none;
+				color: $third-color;
 			}
+		}
+		textarea::placeholder, input::placeholder {
+			color: $third-color;
 		}
 	}
 }
 
-
+//form animation
 .form-hide {
 	display: none !important;
 }
